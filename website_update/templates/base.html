@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Israt Tabassum - Resume</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style_index.css') }}">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <div class="nav-bar">
+    <a href="{{ url_for('index') }}">Home</a>
+    <a href="{{ url_for('education') }}">Education</a>
+    <a href="{{ url_for('skills') }}">Skills</a>
+    <a href="{{ url_for('experience') }}">Experience</a>
+    <a href="{{ url_for('projects') }}">Projects</a>
+    <a href="{{ url_for('research') }}">Research</a>
+    <a href="{{ url_for('contact') }}">Contact</a>
+  </div>
+
+  <!-- Page Content -->
+  {% block content %}{% endblock %}
+
+  <script>
+    // Intersection Observer for fade-up animation
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

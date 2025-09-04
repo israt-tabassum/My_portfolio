@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<section id="education" class="fade-up">
+    <h3 class="education-heading"><i class="fas fa-graduation-cap section-icon"></i>Education</h3>
+    <div class="education-list">
+      <div class="edu-item">
+        <div class="edu-image">
+          <img src="{{ url_for('static', filename='image/usn.png') }}" alt="USN Logo">
+        </div>
+        <div class="edu-text">
+          <h4>MSc in Computer Science</h4>
+          <p><a href="https://www.usn.no/" target="_blank">University of South-Eastern Norway</a></p>
+          <p>Passing Year: 2024</p>
+          <p>Grade: A</p>
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-image">
+          <img src="{{ url_for('static', filename='image/ndub.png') }}" alt="NDUB Logo">
+        </div>
+        <div class="edu-text">
+          <h4>BSc in Computer Science and Engineering</h4>
+          <p><a href="https://ndub.edu.bd/" target="_blank">Notre Dame University Bangladesh</a></p>
+          <p>Passing Year: 2020</p>
+          <p>Grade: 3.91 out of 4.00</p>
+        </div>
+      </div>
+    </div>
+</section>
+{% endblock %}
